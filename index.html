@@ -1,154 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Namrata Swain | Portfolio</title>
-    <script src="[cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
-    <script src="[unpkg.com](https://unpkg.com/framer-motion@10.16.4/dist/framer-motion.js)"></script>
-    <script src="[cdn.jsdelivr.net](https://cdn.jsdelivr.net/npm/lucide-static@0.321.0/font/lucide.min.css)"></script>
-    <style>
-        body { background-color: #000; color: white; overflow: hidden; font-family: 'Inter', sans-serif; }
-        .pink-gradient { background: linear-gradient(180deg, rgba(255,20,147,0.2) 0%, rgba(0,0,0,1) 100%); }
-        .card-shadow { box-shadow: 0 10px 30px -5px rgba(255, 20, 147, 0.3); }
-        .glass { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .swiping-card { touch-action: none; position: absolute; width: 100%; height: 100%; transition: transform 0.1s; }
-    </style>
-</head>
-<body class="flex items-center justify-center h-screen w-screen p-4">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Marketing Portfolio</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Mode Toggle -->
-    <div class="fixed top-6 z-50 flex items-center bg-zinc-900 rounded-full p-1 border border-pink-500/30">
-        <button id="swipeMode" class="px-4 py-1 rounded-full bg-pink-600 text-sm font-bold transition-all">Dating Style</button>
-        <button id="recruitMode" class="px-4 py-1 rounded-full text-zinc-400 text-sm font-bold transition-all">Recruiter View</button>
-    </div>
-
-    <!-- Main Container -->
-    <div id="app-container" class="relative w-full max-w-md h-[80vh] bg-zinc-950 rounded-[2rem] overflow-hidden border-4 border-zinc-900 card-shadow">
-        
-        <!-- Swiping Interface -->
-        <div id="swipe-stack" class="relative w-full h-full">
-            
-            <!-- Card 4: Contact & Analytics (Bottom) -->
-            <div class="swiping-card glass p-8 flex flex-col justify-between" style="z-index: 10;">
-                <div>
-                    <h2 class="text-3xl font-black text-pink-500 mb-4">Let's Connect</h2>
-                    <p class="text-zinc-400 mb-6">Send a message directly to my inbox.</p>
-                    <form action="mailto:your-email@iimshillong.ac.in" method="post" enctype="text/plain" class="space-y-4">
-                        <input type="text" placeholder="Your Name" class="w-full bg-zinc-900 border border-pink-500/30 p-3 rounded-xl focus:outline-none focus:border-pink-500">
-                        <textarea placeholder="Your Message" class="w-full bg-zinc-900 border border-pink-500/30 p-3 rounded-xl h-24 focus:outline-none focus:border-pink-500"></textarea>
-                        <button type="submit" class="w-full bg-pink-600 font-bold py-3 rounded-xl hover:bg-pink-500 transition-colors">Send message</button>
-                    </form>
-                </div>
-                <div class="flex justify-around text-pink-500 text-2xl pt-4">
-                    <a href="#">LinkedIn</a>
-                    <a href="#">IG</a>
-                    <a href="#">Twitter</a>
-                </div>
-            </div>
-
-            <!-- Card 3: Skills & Projects -->
-            <div class="swiping-card glass p-6 overflow-y-auto" style="z-index: 20;">
-                <h2 class="text-2xl font-bold text-pink-500 mb-4">Strategic Toolkit</h2>
-                <div class="grid grid-cols-2 gap-3 mb-6">
-                    <div class="p-3 bg-pink-900/20 border border-pink-500/30 rounded-lg text-xs">Brand Positioning</div>
-                    <div class="p-3 bg-pink-900/20 border border-pink-500/30 rounded-lg text-xs">Consumer Insights</div>
-                    <div class="p-3 bg-pink-900/20 border border-pink-500/30 rounded-lg text-xs">Digital Growth</div>
-                    <div class="p-3 bg-pink-900/20 border border-pink-500/30 rounded-lg text-xs">GTM Strategy</div>
-                </div>
-                <h2 class="text-2xl font-bold text-pink-500 mb-4">Top Achievements</h2>
-                <div class="space-y-3">
-                    <div class="p-4 bg-zinc-900 rounded-xl border-l-4 border-pink-500">
-                        <p class="font-bold text-sm">Winning National Case Study</p>
-                        <p class="text-xs text-zinc-500">IIM Shillong Flagship Event</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 2: Interactive Grid -->
-            <div class="swiping-card bg-zinc-900 p-6" style="z-index: 30;">
-                <h2 class="text-pink-500 text-sm font-bold tracking-widest uppercase mb-4">The Breakdown</h2>
-                <div class="grid grid-cols-2 gap-4 h-3/4">
-                    <button class="bg-zinc-800 rounded-2xl flex flex-col items-center justify-center p-4 border border-zinc-700 hover:border-pink-500 transition-all">
-                        <span class="text-xs font-bold text-pink-400">Education</span>
-                    </button>
-                    <button class="bg-zinc-800 rounded-2xl flex flex-col items-center justify-center p-4 border border-zinc-700 hover:border-pink-500 transition-all">
-                        <span class="text-xs font-bold text-pink-400">Experience</span>
-                    </button>
-                    <button class="bg-zinc-800 rounded-2xl flex flex-col items-center justify-center p-4 border border-zinc-700 hover:border-pink-500 transition-all">
-                        <span class="text-xs font-bold text-pink-400">Projects</span>
-                    </button>
-                    <button class="bg-zinc-800 rounded-2xl flex flex-col items-center justify-center p-4 border border-zinc-700 hover:border-pink-500 transition-all">
-                        <span class="text-xs font-bold text-pink-400">Hobbies</span>
-                    </button>
-                </div>
-                <p class="text-center text-zinc-500 text-xs mt-6">Swipe to see more →</p>
-            </div>
-
-            <!-- Card 1: Main Intro -->
-            <div id="first-card" class="swiping-card relative bg-cover bg-center flex flex-col justify-end p-8" style="z-index: 40; background-image: url('[images.unsplash.com](https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80)');">
-                <div class="absolute inset-0 pink-gradient"></div>
-                <div class="relative z-10">
-                    <h1 class="text-4xl font-extrabold leading-tight">Namrata Swain</h1>
-                    <p class="text-pink-400 font-medium text-lg">Marketing & Brand Strategist</p>
-                    <div class="flex items-center gap-2 mt-2 text-zinc-300">
-                        <span class="bg-white/10 px-2 py-1 rounded text-xs uppercase tracking-tighter">IIM Shillong</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- UI Overlay Controls -->
-    <div class="fixed bottom-10 flex gap-6 z-50">
-        <button onclick="swipe('left')" class="w-14 h-14 bg-zinc-900 border-2 border-zinc-800 rounded-full flex items-center justify-center text-red-500 text-xl font-bold shadow-xl">✕</button>
-        <button onclick="swipe('right')" class="w-14 h-14 bg-zinc-900 border-2 border-zinc-800 rounded-full flex items-center justify-center text-green-400 text-xl font-bold shadow-xl">❤</button>
-    </div>
-
-    <script>
-        const cards = document.querySelectorAll('.swiping-card');
-        let currentCardIndex = cards.length - 1;
-
-        function swipe(direction) {
-            if (currentCardIndex < 0) return;
-            
-            const card = cards[currentCardIndex];
-            const xMove = direction === 'right' ? 500 : -500;
-            const rotate = direction === 'right' ? 20 : -20;
-            
-            card.style.transform = `translateX(${xMove}px) rotate(${rotate}deg)`;
-            card.style.opacity = '0';
-            card.style.pointerEvents = 'none';
-            
-            currentCardIndex--;
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+              accent: '#f43f5e',
+              emerald: '#10b981'
+            }
+          }
         }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(229, 231, 235, 0.8);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #4f46e5 0%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-bg {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #f43f5e 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
 
-        // Mode Switching Logic
-        const swipeBtn = document.getElementById('swipeMode');
-        const recruitBtn = document.getElementById('recruitMode');
-        const container = document.getElementById('app-container');
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full z-50 glass-card border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="text-2xl font-extrabold tracking-tight text-slate-900">
+        AMAL<span class="text-brand-600">.MARKETING</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+        <a href="#about" class="hover:text-brand-600 transition">About</a>
+        <a href="#case-studies" class="hover:text-brand-600 transition">Case Studies</a>
+        <a href="#calculator" class="hover:text-brand-600 transition">ROI Calculator</a>
+        <a href="#skills" class="hover:text-brand-600 transition">Skills & Tools</a>
+        <a href="#contact" class="px-5 py-2.5 rounded-full gradient-bg text-white shadow-md hover:shadow-lg transition transform hover:-translate-y-0.5">Let's Talk</a>
+      </div>
+    </div>
+  </nav>
 
-        recruitBtn.addEventListener('click', () => {
-            recruitBtn.classList.add('bg-pink-600', 'text-white');
-            recruitBtn.classList.remove('text-zinc-400');
-            swipeBtn.classList.remove('bg-pink-600');
-            swipeBtn.classList.add('text-zinc-400');
+  <!-- Hero Section -->
+  <section id="about" class="pt-36 pb-20 px-6 max-w-7xl mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="lg:col-span-7 space-y-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-50 text-brand-600 font-bold text-xs uppercase tracking-wider border border-brand-500/20">
+          <span class="w-2 h-2 rounded-full bg-brand-emerald animate-ping"></span>
+          Available for New Campaigns & Strategy Roles
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+          Scaling Brands with <span class="gradient-text">Data-Driven Growth</span> & Creative Spark
+        </h1>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl">
+          Hi, I'm <span class="font-semibold text-slate-900">Amal Krishna</span> — Digital Marketing Strategist specializing in Performance Marketing, SEO Architecture, Paid Media (ROAS optimization), and Content Conversion Funnels.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#case-studies" class="px-7 py-3.5 rounded-xl gradient-bg text-white font-bold shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+            View Work <i class="fa-solid fa-arrow-down text-sm"></i>
+          </a>
+          <a href="#calculator" class="px-7 py-3.5 rounded-xl bg-white text-slate-800 border border-slate-300 font-bold hover:bg-slate-100 transition flex items-center gap-2 shadow-sm">
+            Try Interactive ROI Calculator <i class="fa-solid fa-calculator text-brand-600"></i>
+          </a>
+        </div>
+
+        <!-- High-Impact Live Stats Banner -->
+        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-slate-200">
+          <div>
+            <h3 class="text-3xl font-extrabold text-slate-900">$1.2M+</h3>
+            <p class="text-xs text-slate-500 font-medium">Ad Spend Managed</p>
+          </div>
+          <div>
+            <h3 class="text-3xl font-extrabold text-brand-600">4.8x</h3>
+            <p class="text-xs text-slate-500 font-medium">Average ROAS Achieved</p>
+          </div>
+          <div>
+            <h3 class="text-3xl font-extrabold text-slate-900">250K+</h3>
+            <p class="text-xs text-slate-500 font-medium">Qualified Leads Generated</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual / Floating Cards -->
+      <div class="lg:col-span-5 relative">
+        <div class="relative mx-auto w-full max-w-md aspect-square rounded-3xl gradient-bg p-1 shadow-2xl">
+          <div class="w-full h-full bg-slate-900 rounded-[22px] p-6 flex flex-col justify-between text-white relative overflow-hidden">
+            <!-- Background Accent Circle -->
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-brand-accent/30 rounded-full blur-2xl"></div>
             
-            // Transition to List/Recruiter Mode
-            container.classList.add('overflow-y-auto');
-            document.querySelectorAll('.swiping-card').forEach(c => {
-                c.style.position = 'relative';
-                c.style.transform = 'none';
-                c.style.opacity = '1';
-                c.style.height = 'auto';
-                c.style.marginBottom = '20px';
-            });
-        });
+            <div class="flex justify-between items-center z-10">
+              <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Live Campaign Metrics</span>
+              <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full font-semibold">Live Demo</span>
+            </div>
 
-        swipeBtn.addEventListener('click', () => {
-             location.reload(); // Quick reset for prototype
-        });
-    </script>
+            <!-- Mini Interactive Stats Preview -->
+            <div class="space-y-4 my-auto z-10">
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/50">
+                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                  <span>Google Ads Campaign</span>
+                  <span class="text-emerald-400 font-bold">+312% Growth</span>
+                </div>
+                <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                  <div class="bg-emerald-400 h-full w-[85%] rounded-full"></div>
+                </div>
+              </div>
+
+              <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700/50">
+                <div class="flex justify-between text-xs text-slate-400 mb-1">
+                  <span>Meta Ads CTR</span>
+                  <span class="text-brand-500 font-bold">3.8% (Avg 1.2%)</span>
+                </div>
+                <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                  <div class="bg-brand-500 h-full w-[72%] rounded-full"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-xs text-slate-400 z-10 flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-400"></i> Verified Campaign Analytics
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Case Studies Section -->
+  <section id="case-studies" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">Featured Work</h2>
+      <h3 class="text-3xl font-extrabold text-slate-900">Campaign Case Studies</h3>
+      <p class="text-slate-600 mt-2">Filter by strategy category to inspect results and growth tactics.</p>
+
+      <!-- Category Filter Buttons -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8">
+        <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-full text-sm font-semibold border transition bg-slate-900 text-white border-slate-900" data-cat="all">All Projects</button>
+        <button onclick="filterProjects('performance')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 text-slate-600 hover:bg-slate-100 transition" data-cat="performance">Performance Marketing</button>
+        <button onclick="filterProjects('seo')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 text-slate-600 hover:bg-slate-100 transition" data-cat="seo">SEO Strategy</button>
+        <button onclick="filterProjects('social')" class="filter-btn px-4 py-2 rounded-full text-sm font-semibold border border-slate-200 text-slate-600 hover:bg-slate-100 transition" data-cat="social">Social & Branding</button>
+      </div>
+    </div>
+
+    <!-- Case Studies Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+      
+      <!-- Card 1 -->
+      <div class="project-card glass-card rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1" data-category="performance">
+        <div class="flex justify-between items-start mb-4">
+          <span class="px-3 py-1 rounded-full bg-indigo-50 text-indigo-600 text-xs font-bold">Performance Paid Ads</span>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">+450% ROAS</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900 mb-2">E-Commerce Revenue Scaling</h4>
+        <p class="text-slate-600 text-sm mb-4">Scaled a D2C fashion brand using hyper-segmented Meta Retargeting & Google Shopping ads.</p>
+        <div class="bg-slate-50 p-3 rounded-xl mb-4 text-xs space-y-1 text-slate-700">
+          <div><strong class="text-slate-900">Key Metric:</strong> $280K Revenue in 90 Days</div>
+          <div><strong class="text-slate-900">CPA Reduction:</strong> Reduced acquisition cost by 38%</div>
+        </div>
+        <button onclick="showModal('E-Commerce Revenue Scaling', 'Managed Meta & Google Shopping campaigns with dynamic creative optimization. A/B tested 40+ ad copy variations resulting in record CTR.')" class="text-brand-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
+          Read Strategy Brief <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="project-card glass-card rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1" data-category="seo">
+        <div class="flex justify-between items-start mb-4">
+          <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-600 text-xs font-bold">SEO & Organic Growth</span>
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">120K Organic/mo</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900 mb-2">SaaS Organic Search Takeover</h4>
+        <p class="text-slate-600 text-sm mb-4">Complete SEO overhaul, pillar page cluster setup, and technical crawl optimization for a B2B SaaS platform.</p>
+        <div class="bg-slate-50 p-3 rounded-xl mb-4 text-xs space-y-1 text-slate-700">
+          <div><strong class="text-slate-900">Organic Traffic:</strong> From 12k to 120k monthly visits</div>
+          <div><strong class="text-slate-900">First Page Keywords:</strong> 180+ High Intent Keywords</div>
+        </div>
+        <button onclick="showModal('SaaS Organic Search Takeover', 'Executed programmatic content clusters and technical schema implementation that tripled organic signups over 6 months.')" class="text-brand-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
+          Read Strategy Brief <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="project-card glass-card rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-xl transition transform hover:-translate-y-1" data-category="social">
+        <div class="flex justify-between items-start mb-4">
+          <span class="px-3 py-1 rounded-full bg-rose-50 text-rose-600 text-xs font-bold">Social & Creator Marketing</span>
+          <span class="text-xs font-bold text-rose-600 bg-rose-50 px-2 py-1 rounded">5.2M Views</span>
+        </div>
+        <h4 class="text-xl font-bold text-slate-900 mb-2">Viral Product Launch Campaign</h4>
+        <p class="text-slate-600 text-sm mb-4">Influencer marketing mixed with short-form Reels & TikTok content strategy for a Gen-Z consumer app.</p>
+        <div class="bg-slate-50 p-3 rounded-xl mb-4 text-xs space-y-1 text-slate-700">
+          <div><strong class="text-slate-900">App Downloads:</strong> 45,000+ organic downloads</div>
+          <div><strong class="text-slate-900">Creator Partners:</strong> 25 micro-influencers onboarding</div>
+        </div>
+        <button onclick="showModal('Viral Product Launch Campaign', 'Designed high-converting UGC script templates for creator partnerships, driving low CAC and organic virality.')" class="text-brand-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
+          Read Strategy Brief <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Interactive ROI Calculator Widget (Fun & Engaging) -->
+  <section id="calculator" class="py-20 px-6 bg-slate-900 text-white">
+    <div class="max-w-4xl mx-auto bg-slate-800/90 rounded-3xl p-8 sm:p-12 border border-slate-700 shadow-2xl">
+      <div class="text-center max-w-xl mx-auto mb-10">
+        <span class="px-3 py-1 rounded-full bg-brand-500/20 text-brand-500 text-xs font-bold uppercase tracking-wider">Interactive Tool</span>
+        <h3 class="text-3xl font-extrabold text-white mt-2">Estimate Your Campaign ROI</h3>
+        <p class="text-slate-400 text-sm mt-1">Adjust ad spend and expected conversion rate to see projected revenue growth.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Controls -->
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2">
+              <span>Monthly Ad Budget ($):</span>
+              <span id="budget-val" class="text-brand-500 font-bold">$5,000</span>
+            </div>
+            <input type="range" id="budget" min="1000" max="50000" step="1000" value="5000" class="w-full accent-indigo-500 cursor-pointer" oninput="calculateROI()">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2">
+              <span>Avg. Customer Order Value ($):</span>
+              <span id="aov-val" class="text-brand-500 font-bold">$120</span>
+            </div>
+            <input type="range" id="aov" min="20" max="1000" step="10" value="120" class="w-full accent-indigo-500 cursor-pointer" oninput="calculateROI()">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-sm font-semibold mb-2">
+              <span>Target Conversion Rate (%):</span>
+              <span id="cvr-val" class="text-brand-500 font-bold">3.5%</span>
+            </div>
+            <input type="range" id="cvr" min="0.5" max="10" step="0.5" value="3.5" class="w-full accent-indigo-500 cursor-pointer" oninput="calculateROI()">
+          </div>
+        </div>
+
+        <!-- Result Display -->
+        <div class="bg-slate-900/90 p-6 rounded-2xl border border-slate-700 text-center space-y-4">
+          <p class="text-xs uppercase font-bold text-slate-400">Estimated Monthly Return</p>
+          <div class="text-4xl font-extrabold text-emerald-400" id="projected-revenue">$26,250</div>
+          <div class="text-xs text-slate-400">Estimated ROAS: <span id="projected-roas" class="text-white font-bold">5.25x</span></div>
+          <hr class="border-slate-800">
+          <p class="text-xs text-slate-400">Ready to achieve these numbers for your business?</p>
+          <a href="#contact" class="inline-block px-6 py-2.5 rounded-xl gradient-bg text-white font-bold text-xs shadow-md hover:opacity-90 transition">
+            Book Strategy Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & MarTech Stack -->
+  <section id="skills" class="py-20 px-6 max-w-7xl mx-auto">
+    <div class="text-center max-w-xl mx-auto mb-12">
+      <h2 class="text-xs font-bold text-brand-600 uppercase tracking-widest mb-2">Core Competencies</h2>
+      <h3 class="text-3xl font-extrabold text-slate-900">Marketing Stack & Skills</h3>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-brands fa-google text-2xl text-blue-500 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">Google Ads</p>
+        <p class="text-[11px] text-slate-500">PPC & Search</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-brands fa-facebook text-2xl text-blue-600 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">Meta Ads</p>
+        <p class="text-[11px] text-slate-500">FB & Instagram</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-solid fa-chart-line text-2xl text-amber-500 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">GA4 Analytics</p>
+        <p class="text-[11px] text-slate-500">Tracking & Funnels</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-solid fa-magnifying-glass text-2xl text-emerald-500 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">SEO & Semrush</p>
+        <p class="text-[11px] text-slate-500">Organic Ranking</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-solid fa-envelope-open-text text-2xl text-rose-500 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">Klaviyo & Email</p>
+        <p class="text-[11px] text-slate-500">Automations</p>
+      </div>
+
+      <div class="glass-card p-4 rounded-xl text-center hover:border-brand-500 transition">
+        <i class="fa-solid fa-bullseye text-2xl text-purple-500 mb-2"></i>
+        <p class="font-bold text-sm text-slate-800">Conversion CRO</p>
+        <p class="text-[11px] text-slate-500">Landing Page Opt</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Call to Action -->
+  <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center">
+    <div class="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200 shadow-lg">
+      <h3 class="text-3xl font-extrabold text-slate-900 mb-3">Let's Grow Your Brand Together</h3>
+      <p class="text-slate-600 mb-8 max-w-lg mx-auto text-sm">Have a project, campaign, or marketing role in mind? Send me a message and let's map out a strategy.</p>
+
+      <form onsubmit="handleContact(event)" class="space-y-4 max-w-md mx-auto">
+        <input type="text" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+        <input type="email" required placeholder="Your Email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm">
+        <textarea required rows="3" placeholder="Tell me about your project or goal..." class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500 text-sm"></textarea>
+        <button type="submit" class="w-full py-3.5 rounded-xl gradient-bg text-white font-bold text-sm shadow-md hover:shadow-lg transition">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modal Popup for Case Studies -->
+  <div id="modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-md w-full rounded-2xl p-6 shadow-2xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+      <h4 id="modal-title" class="text-xl font-bold text-slate-900 mb-3"></h4>
+      <p id="modal-body" class="text-slate-600 text-sm leading-relaxed mb-6"></p>
+      <button onclick="closeModal()" class="w-full py-2.5 bg-slate-900 text-white rounded-xl font-bold text-sm">Close Brief</button>
+    </div>
+  </div>
+
+  <footer class="py-6 text-center text-xs text-slate-400 border-t border-slate-200">
+    © <script>document.write(new Date().getFullYear())</script> Amal Krishna P V — Digital Marketing Portfolio.
+  </footer>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // Project Filter
+    function filterProjects(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const buttons = document.querySelectorAll('.filter-btn');
+
+      buttons.forEach(btn => {
+        if(btn.getAttribute('data-cat') === category) {
+          btn.classList.add('bg-slate-900', 'text-white', 'border-slate-900');
+          btn.classList.remove('border-slate-200', 'text-slate-600');
+        } else {
+          btn.classList.remove('bg-slate-900', 'text-white', 'border-slate-900');
+          btn.classList.add('border-slate-200', 'text-slate-600');
+        }
+      });
+
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Interactive ROI Calculator Logic
+    function calculateROI() {
+      const budget = parseFloat(document.getElementById('budget').value);
+      const aov = parseFloat(document.getElementById('aov').value);
+      const cvr = parseFloat(document.getElementById('cvr').value) / 100;
+
+      document.getElementById('budget-val').innerText = '$' + budget.toLocaleString();
+      document.getElementById('aov-val').innerText = '$' + aov;
+      document.getElementById('cvr-val').innerText = (cvr * 100).toFixed(1) + '%';
+
+      // Estimated clicks assuming $1.50 CPC average
+      const estimatedClicks = budget / 1.5;
+      const conversions = estimatedClicks * cvr;
+      const revenue = conversions * aov;
+      const roas = (revenue / budget).toFixed(2);
+
+      document.getElementById('projected-revenue').innerText = '$' + Math.round(revenue).toLocaleString();
+      document.getElementById('projected-roas').innerText = roas + 'x';
+    }
+
+    // Modal Logic
+    function showModal(title, body) {
+      document.getElementById('modal-title').innerText = title;
+      document.getElementById('modal-body').innerText = body;
+      document.getElementById('modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+    }
+
+    // Contact Form Handler
+    function handleContact(e) {
+      e.preventDefault();
+      alert('Thank you! Message sent successfully. (Demo)');
+      e.target.reset();
+    }
+
+    // Initial calculation on load
+    calculateROI();
+  </script>
 </body>
 </html>
